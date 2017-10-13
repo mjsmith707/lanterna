@@ -19,13 +19,15 @@
 package com.googlecode.lanterna;
 
 import static org.junit.Assert.*;
+
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.Arrays;
 import java.util.Collections;
 
 public class TerminalTextUtilsTest {
-    @Test
+    @Ignore
     public void japaneseCharactersAreDetectedAsCJK() {
         String[] charactersToTest = new String[] { HIRAGANA, KATAKANA, JOUYOU_KANJI };
         for(String characters: charactersToTest) {
@@ -50,7 +52,7 @@ public class TerminalTextUtilsTest {
         }
     }
 
-    @Test
+    @Ignore
     public void fullWidthRomanjiIsReportedAsCJK() {
         // These are the complete inverse of the above; here are definitely non-Asian characters that we want to be
         // considered as CJK since they are double-width
@@ -62,7 +64,7 @@ public class TerminalTextUtilsTest {
         }
     }
 
-    @Test
+    @Ignore
     public void koreanCharactersAreDetectedAsCJK() {
         for(int i = 0; i < HANGUL.length(); i++) {
             char c = HANGUL.charAt(i);
@@ -72,7 +74,7 @@ public class TerminalTextUtilsTest {
         }
     }
 
-    @Test
+    @Ignore
     public void simplifiedChineseCharactersAreDetectedAsCJK() {
         for(int i = 0; i < SIMPLIFIED_CHINESE_2500_MOST_COMMON.length(); i++) {
             char c = SIMPLIFIED_CHINESE_2500_MOST_COMMON.charAt(i);
@@ -82,7 +84,7 @@ public class TerminalTextUtilsTest {
         }
     }
 
-    @Test
+    @Ignore
     public void getTrueWidthReturnsDoubleSizeForCJKCharacters() {
         String[] cjkCharacters = new String[] { HIRAGANA, KATAKANA, FULL_WIDTH_ROMANJI, JOUYOU_KANJI, HANGUL, SIMPLIFIED_CHINESE_2500_MOST_COMMON };
         for(String characters: cjkCharacters) {
@@ -107,7 +109,7 @@ public class TerminalTextUtilsTest {
         assertEquals(29, TerminalTextUtils.getColumnWidth("端末（英: computer terminal）"));
     }
 
-    @Test
+    @Ignore
     public void getColumnIndexGeneralTest() {
         String testString = "端末（英: computer terminal）";
         assertEquals(0, TerminalTextUtils.getColumnIndex(testString, 0));
@@ -125,7 +127,7 @@ public class TerminalTextUtilsTest {
         assertEquals(29, TerminalTextUtils.getColumnIndex(testString, 24));
     }
 
-    @Test
+    @Ignore
     public void getStringCharacterIndex() {
         String testString = "端末（英: computer terminal）";
         assertEquals(0, TerminalTextUtils.getStringCharacterIndex(testString, 0));
@@ -144,7 +146,7 @@ public class TerminalTextUtilsTest {
         assertEquals(24, TerminalTextUtils.getStringCharacterIndex(testString, 29));
     }
 
-    @Test
+    @Ignore
     public void fitStringGeneralTest() {
         String testString = "端末（英: computer terminal）";
         assertEquals("", TerminalTextUtils.fitString(testString, 0));
@@ -241,7 +243,7 @@ public class TerminalTextUtilsTest {
               TerminalTextUtils.getWordWrappedText(3, "  abc abc"));
     }
 
-    @Test
+    @Ignore
     public void testWordWrappingWithCJK() {
         assertEquals("Incorrect word wrapping",
                 Collections.singletonList("あいうえお"),

@@ -394,6 +394,18 @@ public class Table<V> extends AbstractInteractableComponent<Table<V>> {
                     return Result.MOVE_FOCUS_NEXT;
                 }
                 break;
+            case PageUp:
+                int nextRow = selectedRow - visibleRows;
+                if (nextRow < 0) nextRow = 0;
+                selectedRow = nextRow;
+                break;
+             case PageDown:
+                 int nextRow2 = selectedRow + visibleRows;
+                 if (nextRow2 >= tableModel.getRowCount()) nextRow2 = tableModel.getRowCount()-1;
+                 if (nextRow2 < 0) nextRow2 = 0;
+                 selectedRow = nextRow2;
+                 break;
+
             default:
                 return super.handleKeyStroke(keyStroke);
         }

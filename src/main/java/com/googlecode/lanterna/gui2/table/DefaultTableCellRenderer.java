@@ -31,15 +31,17 @@ import com.googlecode.lanterna.gui2.TextGUIGraphics;
 public class DefaultTableCellRenderer<V> implements TableCellRenderer<V> {
     @Override
     public TerminalSize getPreferredSize(Table<V> table, V cell, int columnIndex, int rowIndex) {
-        String[] lines = getContent(cell);
+        String line = cell.toString();
+        int maxWidth = line.length();
+        /*String[] lines = getContent(cell);
         int maxWidth = 0;
         for(String line: lines) {
             int length = TerminalTextUtils.getColumnWidth(line);
             if(maxWidth < length) {
                 maxWidth = length;
             }
-        }
-        return new TerminalSize(maxWidth, lines.length);
+        }*/
+        return new TerminalSize(maxWidth, 1);
     }
 
     @Override

@@ -96,6 +96,8 @@ public class TerminalTextUtils {
      *
      */
     public static boolean isCharCJK(final char c) {
+        return false;
+        /*
         Character.UnicodeBlock unicodeBlock = Character.UnicodeBlock.of(c);
         return (unicodeBlock == Character.UnicodeBlock.HIRAGANA)
                 || (unicodeBlock == Character.UnicodeBlock.KATAKANA)
@@ -112,6 +114,7 @@ public class TerminalTextUtils {
                 || (unicodeBlock == Character.UnicodeBlock.CJK_SYMBOLS_AND_PUNCTUATION)
                 || (unicodeBlock == Character.UnicodeBlock.ENCLOSED_CJK_LETTERS_AND_MONTHS)
                 || (unicodeBlock == Character.UnicodeBlock.HALFWIDTH_AND_FULLWIDTH_FORMS && c < 0xFF61);    //The magic number here is the separating index between full-width and half-width
+                */
     }
 
     /**

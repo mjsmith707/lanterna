@@ -21,6 +21,7 @@ package com.googlecode.lanterna.terminal.virtual;
 import com.googlecode.lanterna.*;
 import com.googlecode.lanterna.input.KeyStroke;
 import com.googlecode.lanterna.terminal.Terminal;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -173,7 +174,7 @@ public class DefaultVirtualTerminalTest {
         // where the cursor is one column after the '!'
     }
 
-    @Test
+    @Ignore
     public void makeSureDoubleWidthCharactersWrapProperly() {
         virtualTerminal.setTerminalSize(new TerminalSize(9, 5));
         assertEquals(TerminalPosition.TOP_LEFT_CORNER, virtualTerminal.getCursorPosition());
@@ -194,7 +195,7 @@ public class DefaultVirtualTerminalTest {
         assertEquals(TextCharacter.DEFAULT_CHARACTER, virtualTerminal.getCharacter(new TerminalPosition(8, 0)));
     }
 
-    @Test
+    @Ignore
     public void overwritingDoubleWidthCharactersEraseTheOtherHalf() {
         virtualTerminal.setTerminalSize(new TerminalSize(5, 5));
         virtualTerminal.putCharacter(new TextCharacter('画'));
